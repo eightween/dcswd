@@ -9,4 +9,4 @@ currently known definitions and declarations related to plugin development [#1]_
 
 .. toctree::
    :maxdepth: 2
-   :caption:
+   

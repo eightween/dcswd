@@ -15,6 +15,7 @@ Plugins typically define a ``Scripts`` directory. The architecture of popular mo
 `A-4E`_ contain a similar layout:
 
 ::
+
     ../DCS/Mods/aircraft/Name/
         Cockpit/Scripts/
         Options/

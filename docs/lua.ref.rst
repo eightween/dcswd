@@ -8,10 +8,8 @@ A plugin requires an ``entry.lua`` file with a loaded properties
 `record <https://www.lua.org/pil/3.6.html>`_.
 
 .. function:: declare_plugin(name, props)
-    :param name: The name of the plugin.
-    :type name: string
-    :param props: Plugin properties
-    :type props: `table <declare_plugin_props>`_
+    :param name: The name of the plugin. (string)
+    :param props: Plugin properties (`table <#properties>`_)
     :returns: No return
 
     Declares a plugin and laods it into the DCS EDGE engine.
@@ -20,8 +18,6 @@ A plugin requires an ``entry.lua`` file with a loaded properties
     :returns: No return
 
     Sets a flag informing the engine of a finished plugin declaration.
-
-.. _declare_plugin_props:
 
 Properties
 **********
@@ -76,15 +72,15 @@ Properties
       - Strings representing names of binary executable files (``.dll``) to inject.
       - ✗
     * - Skins
-      - :doc:`table </lua.ref#skins>`_
+      - `table <#skins>`_
       - Defines the path and representation of UI elements.
       - ✗
     * - Missions
-      - :doc:`table </lua.ref#missions>`
+      - `table <#missions>`_
       - Defines the path and UI representation for flyable missions.
       - ✗
     * - LogBook
-      - :doc:`table </lua.ref#logbook>`
+      - `table <#logbook>`_
       - Defines the path and UI representation for the pilot logbook.
       - ✗
     * - InputProfiles
@@ -92,7 +88,7 @@ Properties
       - Defines the path and UI representation for input profile bindings.
       - ✗
     * - Options
-      - :doc:`table </lua.ref#options>`
+      - `table <#options>`_
       - Option properties
       - ✗
 

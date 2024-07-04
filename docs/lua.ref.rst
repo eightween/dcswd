@@ -7,23 +7,19 @@ Plugins
 A plugin requires an ``entry.lua`` file with a given name and
 `record <https://www.lua.org/pil/3.6.html>`_.
 
-``declare_plugin(name, props)``
-*******************************
-
 .. function:: declare_plugin(name, props)
+
+    Declares a plugin and laods it into the DCS EDGE engine.
+    
     :param name: The name of the plugin. (string)
     :param props: Plugin properties (`table <#properties>`_)
     :returns: No return
 
-    Declares a plugin and laods it into the DCS EDGE engine.
-
-``plugin_done()``
-***************
-
 .. function:: plugin_done()
-    :returns: No return
 
     Sets a flag informing the engine of a finished plugin declaration.
+
+    :returns: No return
 
 Properties
 **********

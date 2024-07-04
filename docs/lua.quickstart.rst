@@ -31,6 +31,7 @@ This is done by adding an ``entry.lua`` file, which DCS will automatically check
 subdirectories within ``Mods/aircraft``. A basic example includes:
 
 .. code-block:: lua
+    
     --- Defines the name for in-game module viewer.
     local self_id = "Mod"
     --- Defines the type stored internally within DCS.

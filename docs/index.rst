@@ -6,7 +6,7 @@
 DCS API Docs
 ============
 
-.. admonition:: warning
+.. warning::
    This documentation is currently work-in-progress. If you find any issues or problems,
    please help out by `supporting the project`_.
 
@@ -14,7 +14,8 @@ DCS API Docs
 
 .. toctree::
    :maxdepth: 2
-   lua/index.rst
+   :caption:
+      lua/index.rst
 
 * :ref:`genindex`
 * :ref:`modindex`

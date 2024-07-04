@@ -2,7 +2,7 @@ Getting started
 ===============
 
 .. note::
-    This contents of this page are from the `Beginners Guide to Systems Coding`_.
+    The contents of this page are from the `Beginners Guide to Systems Coding`_.
 
 Setting up the project
 ----------------------
@@ -14,12 +14,13 @@ Setting up the project
 Plugins typically define a ``Scripts`` directory. The architecture of popular mods, such as the
 `A-4E`_ contain a similar layout:
 
-- ../Mods/aircraft/NAME/
-    - Cockpit/Scripts/
-    - Options/
-    - Scripts/
-    - aircraft_name.lua
-    - entry.lua
+::
+    ../DCS/Mods/aircraft/Name/
+        Cockpit/Scripts/
+        Options/
+        Scripts/
+        aircraft_name.lua
+        entry.lua
 
 Initialisation
 --------------
@@ -64,7 +65,14 @@ subdirectories within ``Mods/aircraft``. A basic example includes:
     -- alerts engine that we're done loading
     plugin_done()
 
-For more information on plugin definition, please check the :doc:`API reference </lua.ref#plugins>`.
+For more information on plugin definition, please check the `API reference <lua.ref#plugins>`_.
+
+Debugging
+---------
+
+DCS has two methods of debugging: using the ``dcs.log`` file found within your ``Saved Games`` path,
+or using ``Export.lua`` from your ``DCS/Scripts`` path. For basic debugging of the entry process,
+please consider using the log file.
 
 .. _Beginners Guide to Systems Coding: https://bgsc.rtfd.io/
 .. _A-4E: https://github.com/heclak/community-a4e-c

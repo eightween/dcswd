@@ -2,9 +2,7 @@ Getting started
 ===============
 
 .. note::
-    This contents of this page are from the *`Beginners Guide to Systems Coding`_*.
-
-.. _Beginners Guide to Systems Coding: https://bgsc.rtfd.io/
+    This contents of this page are from the `Beginners Guide to Systems Coding`_.
 
 Setting up the project
 ----------------------
@@ -68,4 +66,5 @@ subdirectories within ``Mods/aircraft``. A basic example includes:
 
 For more information on plugin definition, please check the :doc:`API reference </lua.ref#plugins>`.
 
+.. _Beginners Guide to Systems Coding: https://bgsc.rtfd.io/
 .. _A-4E: https://github.com/heclak/community-a4e-c

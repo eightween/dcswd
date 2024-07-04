@@ -12,11 +12,16 @@ DCS API Docs
 
 .. _supporting the project: https://github.com/filiastra/dcs-api-docs
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Table of Contents
+Table of Contents
+-----------------
 
-   lua.rst
+.. toctree::
+   :maxdepth: 3
+
+   lua
+
+Search
+------
 
 * :ref:`genindex`
 * :ref:`modindex`

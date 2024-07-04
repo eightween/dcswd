@@ -3,17 +3,18 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to dcs-api-docs's documentation!
-========================================
+DCS API Docs
+============
+
+.. admonition:: warning
+   This documentation is currently work-in-progress. If you find any issues or problems,
+   please help out by `supporting the project`_.
+
+.. _supporting the project: https://github.com/filiastra/dcs-api-docs
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
-
-
-
-Indices and tables
-==================
+   lua/index.rst
 
 * :ref:`genindex`
 * :ref:`modindex`

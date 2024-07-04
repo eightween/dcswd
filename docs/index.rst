@@ -14,8 +14,9 @@ DCS API Docs
 
 .. toctree::
    :maxdepth: 2
-   
-   lua/*
+   :caption: Table of Contents
+
+   lua.rst
 
 * :ref:`genindex`
 * :ref:`modindex`

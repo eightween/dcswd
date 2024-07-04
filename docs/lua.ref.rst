@@ -116,6 +116,17 @@ Skins
       - The folder path of elements used.
       - ✓
 
+.. collapse:: Example
+
+    .. code-block:: lua
+
+        {
+            {
+                name = "plugin",
+                dir = "Skins/",
+            },
+        }
+
 Missions
 ********
 
@@ -142,6 +153,18 @@ Missions
       - Customisable string text showing a class ID, e.g. ``{CLSID...CLSID}``.
       - ✗
 
+.. collapse:: Example
+
+    .. code-block:: lua
+
+        {
+            {
+                name = "plugin",
+                dir = "Missions/",
+                CLSID = "{CLSID01234567890CLSID}",
+            },
+        }
+
 LogBook
 *******
 
@@ -163,6 +186,17 @@ LogBook
       - string
       - The plugin type. [#2]_
       - ✓
+
+.. collapse:: Example
+
+    .. code-block:: lua
+
+        {
+            {
+                name = "plugin",
+                type = type_id,
+            },
+        }
 
 Options
 *******
@@ -190,6 +224,19 @@ Options
       - string
       - Customisable string text showing a class ID, e.g. ``"{" .. type_id .. " options}"``.
       - ✗
+
+.. collapse:: Example
+
+    .. code-block:: lua
+
+        {
+            {
+                name = "plugin",
+                nameId = type_id,
+                dir = "Options/",
+                CLSID = "{plugin options}",
+            },
+        }
 
 .. [#1] UI known includes: special settings, main menu and the mission editor.
 .. [#2] Plugins are loaded and internally referenced by a "type" ID.

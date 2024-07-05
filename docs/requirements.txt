@@ -1,1 +1,1 @@
-sphinx-collapse
+sphinx-collapse==0.1.3

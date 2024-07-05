@@ -16,6 +16,7 @@ Table of Contents
    :maxdepth: 3
 
    lua
+   glossary
 
 Search
 ------

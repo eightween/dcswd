@@ -5,21 +5,23 @@ Plugins
 -------
 
 A plugin requires an ``entry.lua`` file with a given name and
-`record <https://www.lua.org/pil/3.6.html>`_.
+`record <https://www.lua.org/pil/2.6.html>`_:
 
 .. function:: declare_plugin(name, props)
 
-    Declares a plugin and laods it into the DCS EDGE engine.
+    Declares a plugin and loads it into :term:`EDGE`.
     
-    :param name: The name of the plugin. (string)
-    :param props: Plugin properties (`table <#properties>`_)
-    :returns: No return
+    :param name: The name of the plugin.
+    :type name: string
+    :param props: Plugin properties
+    :type props: `Properties table <#properties>`_
+    :returns: nil (implicit)
 
 .. function:: plugin_done()
 
     Sets a flag informing the engine of a finished plugin declaration.
 
-    :returns: No return
+    :returns: nil (implicit)
 
 Properties
 **********
@@ -74,23 +76,23 @@ Properties
       - Strings representing names of binary executable files (``.dll``) to inject.
       - ✗
     * - Skins
-      - `table <#skins>`_
+      - `Skins table <#skins>`_
       - Defines the path and representation of UI elements.
       - ✗
     * - Missions
-      - `table <#missions>`_
+      - `Missions table <#missions>`_
       - Defines the path and UI representation for flyable missions.
       - ✗
     * - LogBook
-      - `table <#logbook>`_
+      - `LogBook table <#logbook>`_
       - Defines the path and UI representation for the pilot logbook.
       - ✗
     * - InputProfiles
-      - table
+      - `InputProfiles table <#inputprofiles>`_
       - Defines the path and UI representation for input profile bindings.
       - ✗
     * - Options
-      - `table <#options>`_
+      - `Options table <#options>`_
       - Option properties
       - ✗
 
@@ -109,7 +111,7 @@ Skins
       - Required?
     * - name
       - string
-      - The name of the plugin to show within most UI. [#1]_
+      - The name of the plugin to show within most UI.
       - ✓
     * - dir
       - string
@@ -142,7 +144,7 @@ Missions
       - Required?
     * - name
       - string
-      - The name of the plugin to show within most UI. [#1]_
+      - The name of the plugin to show within most UI.
       - ✓
     * - dir
       - string
@@ -161,7 +163,7 @@ Missions
             {
                 name = "plugin",
                 dir = "Missions/",
-                CLSID = "{CLSID01234567890CLSID}",
+                CLSID = "{CLSID01124567890CLSID}",
             },
         }
 
@@ -180,11 +182,11 @@ LogBook
       - Required?
     * - name
       - string
-      - The name of the plugin to show within most UI. [#1]_
+      - The name of the plugin to show within most UI.
       - ✓
     * - type
       - string
-      - The plugin type. [#2]_
+      - The plugin type.
       - ✓
 
 .. collapse:: Example
@@ -198,6 +200,15 @@ LogBook
             },
         }
 
+InputProfiles
+*************
+
+.. code-block:: lua
+
+  {
+    [type_id] = "InputProfiles",
+  }
+
 Options
 *******
 
@@ -210,7 +221,7 @@ Options
       - Required?
     * - name
       - string
-      - The name of the plugin to show within most UI. [#1]_
+      - The name of the plugin to show within most UI.
       - ✓
     * - nameId
       - string
@@ -238,5 +249,8 @@ Options
             },
         }
 
-.. [#1] UI known includes: special settings, main menu and the mission editor.
-.. [#2] Plugins are loaded and internally referenced by a "type" ID.
+Devices
+-------
+
+Devices are subprocesses executed inside of a plugin. A common example of a device is for cockpit model
+animations. For more information, please check :doc:`lua.api.device`.

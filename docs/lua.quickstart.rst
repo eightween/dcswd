@@ -39,7 +39,7 @@ subdirectories within ``Mods/aircraft``. A basic example includes:
     --- Defines the current version shown on DCS UI.
     local VERSION = "0.1.0-dev"
 
-    local DeclarePluginProperties  =
+    local DeclarePluginProperties =
     {
         installed       = true,
         dirName         = current_mod_path,
@@ -49,16 +49,6 @@ subdirectories within ``Mods/aircraft``. A basic example includes:
         version         = VERSION,
         state           = "installed",
         info            = _(self_id .. " description"),
-        Options         = {
-            {
-                {
-                    name    = _(self_id),
-                    nameId  = self_id,
-                    dir     = "Options",
-                    CLSID   = "{" .. self_id .. " options}",
-                }
-            }
-        },
     }
 
     -- global lua function directly loads as known module
@@ -67,14 +57,20 @@ subdirectories within ``Mods/aircraft``. A basic example includes:
     -- alerts engine that we're done loading
     plugin_done()
 
-For more information on plugin definition, please check the `API reference <lua.ref#plugins>`_.
+For more information on plugin definition, please check :doc:`lua.ref`.
 
 Debugging
----------
+*********
 
 DCS has two methods of debugging: using the ``dcs.log`` file found within your ``Saved Games`` path,
 or using ``Export.lua`` from your ``DCS/Scripts`` path. For basic debugging of the entry process,
 please consider using the log file.
+
+Setting up the cockpit
+----------------------
+
+:term:`EDGE` is capable of detecting connectors in an :term:`EDM`. These connectors can also be
+interacted with, as a :doc:`lua.api.device` and/or :doc:`lua.api.clickable` definition.
 
 .. _Beginners Guide to Systems Coding: https://bgsc.rtfd.io/
 .. _A-4E: https://github.com/heclak/community-a4e-c

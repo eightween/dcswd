@@ -1,9 +1,9 @@
-Lua API
-=======
+Lua
+===
 
-DCS World uses an embedded programming language, `Lua <https://www.lua.org/about.html>`_ for
+DCS World uses the embedded programming language, `Lua <https://www.lua.org/about.html>`_ for
 its `scripting engine <https://dcs.world/en/support/faq/1253/>`_. This section documents all
-currently known definitions and declarations related to plugin development [#1]_.
+currently known definitions and declarations related to :term:`Plugin` development.
 
 .. toctree::
    :maxdepth: 2
@@ -11,4 +11,15 @@ currently known definitions and declarations related to plugin development [#1]_
    lua.quickstart
    lua.ref
 
-.. [#1] "Plugin" refers to a DCS mod that can be loaded into the engine.
+API
+---
+
+This section covers all of the known DCS Lua API globals and functions.
+
+Devices
+*******
+
+.. toctree::
+   :maxdepth: 1
+
+   lua.api.device

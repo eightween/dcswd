@@ -32,5 +32,4 @@ There are additional examples included of common systems found in an aircraft:
    :maxdepth: 1
 
    lua.api.landing_gear_system
-   lua.api.
    lua.api.parameter

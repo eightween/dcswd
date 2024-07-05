@@ -22,6 +22,14 @@ Functions
     :param number: The value to set.
     :returns: nil (implicit)
 
+.. function:: show_param_handles_list(show_imgui)
+
+    Toggles an :term:`ImGui` widget window on and off in-game.
+
+    :param show_imgui: Should ImGui be shown in-game?
+    :type show_imgui: boolean
+    :returns: ?
+
 Implementation
 --------------
 

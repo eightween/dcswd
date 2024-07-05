@@ -9,6 +9,7 @@ currently known definitions and declarations related to :term:`Plugin` developme
    :maxdepth: 2
 
    lua.quickstart
+   lua.input
    lua.ref
 
 API Reference
@@ -17,12 +18,19 @@ API Reference
 This section covers all essential globals and functions from the DCS Lua API for coding
 aircraft systems.
 
-Devices
-*******
-
 .. toctree::
    :maxdepth: 1
 
    lua.api.clickable
    lua.api.device
-   lua.api.landing_gear
+   lua.api.electric
+   lua.api.weapon
+
+There are additional examples included of common systems found in an aircraft:
+
+.. toctree::
+   :maxdepth: 1
+
+   lua.api.landing_gear_system
+   lua.api.
+   lua.api.parameter

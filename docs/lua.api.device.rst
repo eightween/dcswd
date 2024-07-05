@@ -14,14 +14,14 @@ DCS Lua API functions exposed:
 Hooks
 -----
 
-.. function:: SetCommand(input_id, number)
+.. function:: SetCommand(input_id, value)
 
     Called whenever an input binding has been detected.
 
     :param input_id: The ID of the input, e.g. ``Joystick.CmsDown``.
-    :type input_id: integer
-    :param number: The current value of the input.
-    :type number: integer
+    :type input_id: number
+    :param value: The current value of the input.
+    :type value: number
 
 .. function:: CockpitEvent(name, value)
 
@@ -66,7 +66,7 @@ Hooks
     or 1/10th a millisecond.
 
     :param seconds: The amount of time in-between intervals.
-    :type seconds: integer
+    :type seconds: number
     :returns: nil (implicit)
 
 Functions
@@ -76,26 +76,21 @@ Functions
     
     Gets the current value of an animation argument from the exterior :term:`EDM`.
 
-    :param number: The number of the animation argument.
-    :type number: integer
     :returns: The associated value.
-    :rtype: integer
+    :rtype: number
 
 .. function:: set_draw_aircraft_argument_value(number)
 
     Sets a value to the specified animation argument for the exterior :term:`EDM`.
 
-    :param number: The value to set.
     :returns: nil (implicit)
 
 .. function:: get_cockpit_draw_argument_value(number)
 
     Gets the current value of an animation argument for the interior :term:`EDM`.
 
-    :param number: The number of the animation argument.
-    :type number: integer
     :returns: The associated value.
-    :rtype: integer
+    :rtype: number
 
 ----
 
@@ -116,9 +111,15 @@ Functions
     :param device_id: The ID of the device to use.
     :type device_id: string
     :param input_id: The ID of the input to use.
-    :type input_id: integer
+    :type input_id: number
     :param value: The value to trigger the device input with.
-    :type value: integer
+    :type value: number
+    :returns: nil (implicit)
+
+.. function:: print_message_to_user(string)
+
+    Prints string text in-game in the top right corner.
+
     :returns: nil (implicit)
 
 ----
@@ -137,69 +138,218 @@ BaseData
 
     Gets the current angle of attack.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getAngleOfSlide()
 
     Gets the current angle of slide.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getBarometricAltitude()
 
     Gets the current altitude in barometric unit.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getCanopyPos()
 
     Gets the current position of the canopy.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getCanopyState()
 
     Gets the current state of the canopy, e.g. damaged, open, closed.
 
-    :rtype: integer (???)
+    :rtype: number (???)
 
 .. function:: getEngineLeftFuelConsumption()
 
     Gets the current fuel consumption rate of the left engine.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getEngineLeftRPM()
 
     Gets the current RPM percentage of the left engine.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getEngineLeftTemperatureBeforeTurbine()
 
     Gets the current temperature of the left engine (in Celsius) before
     statrtup.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getEngineRightFuelConsumption()
 
     Gets the current fuel consumption rate of the right engine.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getEngineRightRPM()
 
     Gets the current RPM percentage of the right engine.
 
-    :rtype: integer
+    :rtype: number
 
 .. function:: getEngineRightTemperatureBeforeTurbine()
 
     Gets the current temperature of the right engine (in Celsius) before
     statrtup.
 
-    :rtype: integer
+    :rtype: number
+
+.. function:: getFlapsPos()
+
+    Gets the current position of the flaps.
+
+    :rtype: number
+
+.. function:: getFlapsRetracted()
+
+    Gets the current position of the flaps underneath the retraction threshold,
+    used for aircraft definitions that have multiple flap states.
+
+    :rtype: number
+
+.. function:: getHeading()
+
+    Gets the current *relative* heading in degrees. (not to be confused with
+    :func:`getMagneticHeading`)
+
+    :rtype: number
+
+.. function:: getHorizontalAcceleration()
+    
+    Gets the current rate of horizontal acceleration, in meters per second.
+
+    :rtype: number
+
+.. function:: getIndicatedAirSpeed()
+
+    Gets the current in-air speed (`IAS <https://en.wikipedia.org/wiki/Indicated_airspeed>`_)
+    in knots per second.
+
+    :rtype: number
+
+.. function:: getLandingGearHandlePos()
+
+    Gets the current position state of the landing gear handle, used for aircraft
+    definitions that have multiple gear states.
+
+    :rtype: number
+
+.. function:: getLateralAcceleration()
+
+    Gets the current rate of lateral (side-by-side) acceleration, in meters per second.
+
+    :rtype: number
+
+.. function:: getLeftMainLandingGearDown()
+
+    Gets the current state of the left landing gear and checks if it is down.
+
+    :returns: Truthy expression
+    :rtype: number
+
+.. function:: getLeftMainLandingGearUp()
+
+    Gets the current state of the left landing gear and checks if it is up.
+
+    :returns: Truthy expression
+    :rtype: number
+
+.. function:: getMachNumber()
+
+    Gets the current mach number.
+
+    :rtype: number
+
+.. function:: getMagneticHeading()
+
+    Gets the current *true* (magnetic) heading in degrees.
+
+    :rtype: number
+
+.. function:: getNoseLandingGearDown()
+
+    Gets the current state of the nose landing gear and checks if it is down.
+
+    :returns: Truthy expression
+    :rtype: number
+
+.. function:: getNoseLandingGearUp()
+
+    Gets the current state of the nose landing gear and checks if it is up.
+
+    :returns: Truthy expression
+    :rtype: number
+
+.. function:: getPitch()
+
+    Gets the current pitch angle in degrees.
+
+    :rtype: number
+
+.. function:: getRadarAltitude()
+
+    Gets the current altitude via. radar in degrees.
+
+    :rtype: number
+
+.. function:: getRateOfPitch()
+
+    Gets the current rate of pitch in degrees per second.
+
+    :rtype: number
+
+.. function:: getRateOfRoll()
+
+    Gets the current rate of roll in degrees per second.
+
+    :rtype: number
+
+.. function:: getRateOfYaw()
+
+    Gets the current rate of yaw in degrees per seocnd.
+
+    :rtype: number
+
+.. function:: getRightMainLandingGearDown()
+
+    Gets the current state of the right landing gear and checks if it is down.
+
+    :returns: Truthy expression
+    :rtype: number
+
+.. function:: getRightMainLandingGearUp()
+
+    Gets the current state of the right landing gear and checks if it is up.
+
+    :returns: Truthy expression
+    :rtype: number
+
+.. function:: getRoll()
+
+    Gets the current roll/bank angle in degrees.
+
+    :rtype: number
+
+.. function:: getRudderPosition()
+
+    Gets the current vertical stabiliser(s)' position in degrees.
+
+    :rtype: number
+
+.. function:: getSpeedBrakePos()
+
+    Gets the current position of the speedbrake, used for aircraft definitions
+    with one defined.
+
+    :rtype: number
 
 ----
 
@@ -222,15 +372,13 @@ of parameters when conditions [#1]_ are present.
 
     Sets the value of the parameter.
 
-    :param number: The value to set.
-    :type number: integer
     :returns: nil (implicit)
 
 .. function:: get()
 
     Gets the current parameter value.
 
-    :rtype: integer
+    :rtype: number
 
 Device
 ------
@@ -245,7 +393,7 @@ as add event hooks with functions.
     :doc:`input profile <lua.input>` binding has been detected.
 
     :param input_id: The ID of the input, e.g. ``Keys.PlaneGearDown``.
-    :type input_id: integer
+    :type input_id: number
     :returns: nil (implicit)
 
 .. function:: listen_event(name)
@@ -266,9 +414,9 @@ as add event hooks with functions.
     (Not to be confused with :func:`dispatch_action`)
 
     :param input_id: The ID of the input to use.
-    :type input_id: integer
+    :type input_id: number
     :param value: The value associated with the input.
-    :type value: integer
+    :type value: number
     :param ???:
     :type ???: boolean
 

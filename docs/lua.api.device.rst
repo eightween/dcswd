@@ -33,5 +33,10 @@ Functions
 Implementation
 --------------
 
+.. seealso::
+    If you're looking to implement a common system, such as
+    :doc:`animation & movement of a landing gear <lua.api.landing_gear>`,
+    please check :doc:`guide`.
+
 This file may contain any code you want, and will be executed with the appropriate
 DCS Lua API functions exposed.

@@ -11,10 +11,11 @@ currently known definitions and declarations related to :term:`Plugin` developme
    lua.quickstart
    lua.ref
 
-API
----
+API Reference
+-------------
 
-This section covers all of the known DCS Lua API globals and functions.
+This section covers all essential globals and functions from the DCS Lua API for coding
+aircraft systems.
 
 Devices
 *******
@@ -22,4 +23,6 @@ Devices
 .. toctree::
    :maxdepth: 1
 
+   lua.api.clickable
    lua.api.device
+   lua.api.landing_gear

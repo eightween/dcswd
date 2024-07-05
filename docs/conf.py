@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'dcs-api-docs'
+project = 'DCSWD'
 copyright = '2024, filiastra'
 author = 'filiastra'
 release = '0.1.0'

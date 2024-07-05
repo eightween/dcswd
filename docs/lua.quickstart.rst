@@ -2,7 +2,7 @@ Getting started
 ===============
 
 .. note::
-    The contents of this page are from the `Beginners Guide to Systems Coding`_.
+    The contents of this page are from :term:`BGSC`.
 
 Setting up the project
 ----------------------
@@ -66,11 +66,12 @@ DCS has two methods of debugging: using the ``dcs.log`` file found within your `
 or using ``Export.lua`` from your ``DCS/Scripts`` path. For basic debugging of the entry process,
 please consider using the log file.
 
-Setting up the cockpit
-----------------------
+Cockpit scripting
+-----------------
 
 :term:`EDGE` is capable of detecting connectors in an :term:`EDM`. These connectors can also be
-interacted with, as a :doc:`lua.api.device` and/or :doc:`lua.api.clickable` definition.
+interacted with, such as :doc:`lua.api.device` (e.g. :doc:`lua.api.landing_gear`) and/or
+:doc:`lua.api.clickable`.
 
 .. _Beginners Guide to Systems Coding: https://bgsc.rtfd.io/
 .. _A-4E: https://github.com/heclak/community-a4e-c

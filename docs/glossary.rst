@@ -18,7 +18,14 @@ Glossary
     BGDAM
         `Beginners Guide to DCS Aircraft Mods`_.
 
+    BGSC
+        `Beginners Guide to Systems Coding`_.
+
     ImGui
         https://github.com/ocornut/imgui
 
+    VFS
+        (presumably) Virtual File System used for read/write operations.
+
 .. _Beginners Guide to DCS Aircraft Mods: https://forum.dcs.world/topic/97337-beginners-guide-to-dcs-world-aircraft-mods
+.. _Beginners Guide to Systems Coding: https://bgsc.rtfd.io/

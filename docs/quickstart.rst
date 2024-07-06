@@ -2,7 +2,7 @@ Getting started
 ===============
 
 .. note::
-    Some of the contents are from :term:`BGSC`.
+    Some of the contents are from :term:`BGSC`. This page is incomplete.
 
 Setting up
 ----------
@@ -16,18 +16,12 @@ A flyable plugin consists of multiple directories for various aspects, such as
 the cockpit, settings, (options) liveries, textures & 3D models. DCSWD comes with
 a template repository which can be cloned via. git:
 
-.. warning::
-    This repository does not exist yet.
-
 .. code-block:: bash
 
     $ git clone --recursive https://github.com/filiastra/dcswd-template
 
 Modifying files
 ---------------
-
-.. warning::
-    This section assumes using the repository.
 
 ``entry.lua``
 *************
@@ -37,32 +31,37 @@ present in-game. We can achieve this by creating an entry:
 
 .. code-block:: lua
     :linenos:
-    :emphasize-lines: 2, 4, 6, 9, 22, 25
+    :emphasize-lines: 2, 5, 15, 27, 30
     
-    --- Defines the name for in-game module viewer.
-    local self_id = "Mod"
-    --- Defines the type stored internally within DCS.
-    local type_id = "MOD_TYPE"
-    --- Defines the current version shown on DCS UI.
-    local VERSION = "0.1.0-dev"
+    -- This isn't necessary, but it may be useful for future states.
+    local State = { enabled = 'installed', disabled = 'uninstalled' }
 
-    --- Defines the plugin's properties.
-    local DeclarePluginProperties =
-    {
-        installed       = true,
-        dirName         = current_mod_path,
-        displayName     = _(self_id),
-        fileMenuName    = _(self_id),
-        update_id       = self_id,
-        version         = VERSION,
-        state           = "installed",
-        info            = _(self_id .. " description"),
+    --- Represents the base plugin information we want.
+    local plugin = {
+        name = 'Plugin name',
+        type = 'PluginName',
+        version = '0.1.0',
+        description = 'This plugin is currently under development.',
     }
 
-    -- global lua function directly loads as known module
-    declare_plugin(type_id, DeclarePluginProperties)
+    --- Defines the properties for defining a plugin.
+    -- The bulk of declaring a plugin comes down to metadata and
+    -- file path information.
+    local DeclarePluginProperties = {
+        dirName = current_mod_path,
+        displayName = _(plugin.name),
+        fileMenuName = _(plugin.name),
+        installed = true,
+        state = State.enabled,
+        update_id = plugin.name,
+        version = plugin.version,
+        info = plugin.description,
+    }
 
-    -- alerts engine that we're done loading
+    --- Directly loads the plugin information established into EDGE.
+    declare_plugin(plugin.type, DeclarePluginProperties)
+
+    -- Signalling we're done with plugin entry.
     plugin_done()
 
 Debugging

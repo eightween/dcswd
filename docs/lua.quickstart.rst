@@ -70,7 +70,7 @@ Cockpit scripting
 -----------------
 
 :term:`EDGE` is capable of detecting connectors in an :term:`EDM`. These connectors can also be
-interacted with, such as :doc:`lua.api.device` (e.g. :doc:`lua.api.landing_gear`) and/or
+interacted with, such as :doc:`lua.api.device` (e.g. :doc:`lua.api.landing_gear_system`) and/or
 :doc:`lua.api.clickable`.
 
 .. _Beginners Guide to Systems Coding: https://bgsc.rtfd.io/

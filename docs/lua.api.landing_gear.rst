@@ -1,4 +1,0 @@
-Landing Gear System
-===================
-
-TBA.

@@ -33,7 +33,7 @@ Building from source
 .. code-block:: bash
 
    $ pip install -r requirements.txt 
-   
+
 3. Test build the documentation:
 
 .. code-block:: bash
